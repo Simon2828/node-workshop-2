@@ -7,7 +7,9 @@ function requestJson (url, cb) {
         }
         else {
             try {
+                //console.log(result);
                 cb(null, JSON.parse(result.body));
+                
             }
             catch(err) {
                 cb(err);
@@ -15,5 +17,19 @@ function requestJson (url, cb) {
         }
     });
 }
+
+// function myFunction(err, val) {
+//     if (err) {
+//         console.log('error')
+//     }
+//     else {
+//         console.log('the value is: ', val)
+//     }
+// }
+
+
+// requestJson('http://api.open-notify.org/iss-now.json', myFunction);
+
+
 
 exports.requestJson = requestJson;
